@@ -1,0 +1,146 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yc3-4Z-O06">
+                                <rect key="frame" x="139" y="319" width="96" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="22"/>
+                                <state key="normal" title="选座">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="SelectSeat:" destination="BYZ-38-t0r" eventType="touchUpInside" id="2x1-JC-uJQ"/>
+                                    <segue destination="OIw-Ny-dlN" kind="show" id="jxP-eb-DtV"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="yc3-4Z-O06" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="JkN-4N-ef1"/>
+                            <constraint firstItem="yc3-4Z-O06" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RSt-7i-quE"/>
+                            <constraint firstItem="yc3-4Z-O06" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="299" id="e9e-3k-mlc"/>
+                            <constraint firstItem="yc3-4Z-O06" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="139" id="uxE-46-HUg"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217.5" y="282.5"/>
+        </scene>
+        <!--Seat View Controller-->
+        <scene sceneID="Vtf-zU-Xh0">
+            <objects>
+                <viewController id="OIw-Ny-dlN" customClass="SeatViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="cj4-SJ-UxM"/>
+                        <viewControllerLayoutGuide type="bottom" id="Fce-RF-jq0"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="6PO-Bp-vDg">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" scrollEnabled="NO" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="xOy-8u-0v5">
+                                <rect key="frame" x="20" y="56" width="335" height="405"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="CsL-0f-QNH">
+                                    <size key="itemSize" width="30" height="30"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="SeatCell" id="ydD-Xd-W0Y" customClass="SeatCell">
+                                        <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Ok-0M-uvD">
+                                                    <rect key="frame" x="0.0" y="0.0" width="30" height="30"/>
+                                                    <state key="normal" backgroundImage="icon_seat_gray"/>
+                                                    <state key="selected" backgroundImage="icon_seat_blue"/>
+                                                    <connections>
+                                                        <action selector="seatButtonClick:" destination="ydD-Xd-W0Y" eventType="touchUpInside" id="wtG-2P-1ew"/>
+                                                    </connections>
+                                                </button>
+                                            </subviews>
+                                            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                        </view>
+                                        <size key="customSize" width="30" height="30"/>
+                                        <connections>
+                                            <outlet property="seatButton" destination="3Ok-0M-uvD" id="CGE-kv-l5e"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sUU-07-7Fg">
+                                <rect key="frame" x="20" y="27" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9k2-hr-Jrq">
+                                <rect key="frame" x="20" y="469" width="335" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="eNj-Xv-EPk">
+                                <rect key="frame" x="164" y="540" width="46" height="30"/>
+                                <color key="backgroundColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                <state key="normal" title="付款">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="payButtonClick:" destination="OIw-Ny-dlN" eventType="touchUpInside" id="mbc-2h-7jh"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eNj-Xv-EPk" firstAttribute="top" secondItem="9k2-hr-Jrq" secondAttribute="bottom" constant="50" id="2mP-02-TW0"/>
+                            <constraint firstItem="9k2-hr-Jrq" firstAttribute="top" secondItem="xOy-8u-0v5" secondAttribute="bottom" constant="8" id="3ZN-yU-sfb"/>
+                            <constraint firstItem="xOy-8u-0v5" firstAttribute="leading" secondItem="6PO-Bp-vDg" secondAttribute="leading" constant="20" id="DDJ-I8-H7j"/>
+                            <constraint firstAttribute="trailing" secondItem="9k2-hr-Jrq" secondAttribute="trailing" constant="20" id="HfD-cX-Ph0"/>
+                            <constraint firstAttribute="trailing" secondItem="xOy-8u-0v5" secondAttribute="trailing" constant="20" id="UAb-Ji-GI8"/>
+                            <constraint firstItem="eNj-Xv-EPk" firstAttribute="leading" secondItem="6PO-Bp-vDg" secondAttribute="leading" constant="164" id="cGC-Fn-QEn"/>
+                            <constraint firstItem="Fce-RF-jq0" firstAttribute="top" secondItem="eNj-Xv-EPk" secondAttribute="bottom" constant="97" id="ohn-wj-7VT"/>
+                            <constraint firstItem="9k2-hr-Jrq" firstAttribute="leading" secondItem="6PO-Bp-vDg" secondAttribute="leading" constant="20" id="tiK-Ju-qxC"/>
+                            <constraint firstItem="xOy-8u-0v5" firstAttribute="top" secondItem="cj4-SJ-UxM" secondAttribute="bottom" constant="36" id="vgS-rf-Hpk"/>
+                            <constraint firstItem="eNj-Xv-EPk" firstAttribute="centerX" secondItem="6PO-Bp-vDg" secondAttribute="centerX" id="zg5-qu-WCc"/>
+                        </constraints>
+                    </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="collectionView" destination="xOy-8u-0v5" id="Rum-Mz-wq7"/>
+                        <outlet property="moneyCountLabel" destination="9k2-hr-Jrq" id="wwK-Yt-5zv"/>
+                        <outlet property="seatLabel" destination="sUU-07-7Fg" id="Pvu-Kd-MVR"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Hys-aH-bwt" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="691.5" y="282.5"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="icon_seat_blue" width="32" height="32"/>
+        <image name="icon_seat_gray" width="32" height="32"/>
+    </resources>
+</document>
